@@ -165,7 +165,7 @@ iptables -A MALICIOUS -p tcp --tcp-flags ALL ALL -m comment --comment "block XMA
 
 # As always, if you want to add something like a known, malicious IP to this table, simply add it with this rule here:
 
-# iptables -A MALICIOUS -p <protocol> -m <protocol> --source <source, malicious IP> -j DROP
+# iptables -A MALICIOUS --source <source, malicious IP> -j DROP
 
 # --source: You can add specific rules by a source IP or range, even. For a range of IP's, you could use CIDR notation (0.0.0.0/24) or
 # a range of IP addresses (-m iprange --src-range 0.0.0.0-0.0.0.0)
