@@ -1,5 +1,6 @@
 # Service Hosting
 Here's where I'll save some files, scripts and other relevant documentation to my self-hosting that others could make use of potentially.
+
 As a general note, I am still quite new at this and am learning still to this day. My notes will be updated to reflect my knowledge as it grows and develops further. I hope that what I learn here can be of use to other people who wish to self-host too but don't know how to do so (or how to do so safely).
 
 Current documentation:
