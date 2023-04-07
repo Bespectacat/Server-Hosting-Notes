@@ -1,5 +1,5 @@
 # Service Hosting
-Logging and some files to help me arrange/save things for use on the server(s) I host
+Here's where I'll save some files, scripts and other relevant documentation to my self-hosting that others could make use of potentially.
 
 Current documentation:
 
