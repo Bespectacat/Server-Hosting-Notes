@@ -1,3 +1,4 @@
+# Wireguard
 Wireguard (referred to as WG from hereon) is a P2P connection protocol that securely tunnels internet traffic from one point to another. It can be used to connect two peers together, more than 3 peers together and even have a number of peers all connect to a single endpoint. In essence, it's just an app to facilitate encrypted P2P traffic with the benefit of it working as a VPN server/service if one would so desire it to be.
 
 WG is written in C and is native to the Linux kernel since version 5.6. Further documentation for the app can be found here: https://github.com/pirate/wireguard-docs
