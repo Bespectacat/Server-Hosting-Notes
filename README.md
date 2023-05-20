@@ -14,4 +14,4 @@ How I serve things on the web. You can read my configuration and notes [here](ht
 How I filter and route traffic through my firewall. Configuration and notes [here](https://github.com/Bespectacat/Server-Hosting-Notes/blob/main/iptables-config.sh).
 
 ### NGINX
-[How I reverse proxy my services.](https://github.com/Bespectacat/Server-Hosting-Notes/blob/main/NGINX.md)
+[How I primarily provide my services online.](https://github.com/Bespectacat/Server-Hosting-Notes/blob/main/NGINX.md)
