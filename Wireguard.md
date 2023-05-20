@@ -11,13 +11,13 @@ This design was conceptualized from my earlier SSH tunneling efforts and from th
 
 TL;DR: Yes, it is doable.
 
-Benefits of this design:
+Things that I like about this design:
 - Only one device needs to expose itself to outside internet
 - Proxy can simply be a minimal service, locked-down box only hosting Apache/NGINX/Proxy-of-your-choice
 - Proxy only existing on one system makes for neater organizing (or centralization) of SSL certs
 
-Downsides:
-- Might be harder to forward client IP's through set-up (I'm still figuring this one out as of writing)
+Things that might be an issue with the design:
+- Might be harder to forward client IP's through this set-up
 
 ## *Installation*
 
