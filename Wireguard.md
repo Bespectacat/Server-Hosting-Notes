@@ -25,10 +25,13 @@ First and foremost, the set-up on our systems, both the proxy and the VPS. Some 
 
 Debian:
 `apt install wireguard`
+
 Fedora:
 `dnf install wireguard-tools`
+
 Arch:
 `pacman -S wireguard-tools`
+
 Other installation options can be found here: https://www.wireguard.com/install/
 
 Depending on the version of Linux, you may need to ensure that you have the WG kernel modules installed as well. Beyond Linux 5.6, they're included in the kernel, but anyhthing older than that will require those. You can install them with your package manager. The modules are usually labeled as `wireguard-dkms`
