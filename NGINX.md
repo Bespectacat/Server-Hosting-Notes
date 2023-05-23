@@ -160,12 +160,12 @@ stream {
    }  
   
    upstream proxyhttp {  
-       #points to proxy pi within LAN for HTTP traffic  
+       #points to proxy within LAN for HTTP traffic  
        server your.wg.ip.here:4480;  
    }  
   
    server {
-	   #frontend for VPS to send stuff back to LAN proxy (HTTP)
+	#frontend for VPS to send stuff back to LAN proxy (HTTP)
        listen 80;  
        proxy_pass proxyhttp;  
        proxy_protocol on;  
