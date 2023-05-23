@@ -86,7 +86,7 @@ RHEL/Fedora: `dnf install wireguard-tools`
 
 ### Wireguard
 
-See my Wireguard notes [here.](main/Wireguard.md)
+See my Wireguard notes [here.](Wireguard.md)
 
 ### NGINX
 
@@ -145,7 +145,7 @@ Stream must be installed BOTH on the VPS and your reverse proxy.
 
 ###Wireguard
 
-General set-up instructions [here.](/main/Wireguard.md)
+General set-up instructions [here.](Wireguard.md)
 
 ### NGINX
 
