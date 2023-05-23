@@ -72,11 +72,14 @@ From here, through our VPN connection, the NGINX reverse proxy on the VPS can ca
 This tutorial assumes that you've already got your webservers up and going with whatever webserver application of your choice (Apache, NGINX, etc). You'll need to install Wireguard on all systems and also NGINX on the VPS if you haven't already. I have the dependencies set to install the full suite of NGINX modules for simplicity's sake but it _is_ best practice to build NGINX only with what you need.
 
 NGINX:
+
 Debian/Ubuntu: `apt install nginx-full`
 
 RHEL/Fedora: `dnf install nginx-all-modules`
 
+
 Wireguard:
+
 Debian/Ubuntu: `apt install wireguard`
 
 RHEL/Fedora: `dnf install wireguard-tools`
