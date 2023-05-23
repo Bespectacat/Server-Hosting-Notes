@@ -24,7 +24,7 @@ Thankfully, NGINX has ways to go around that to where you can still get that inf
 - NGINX Proxy Pass from server to VPS
 - NGINX Stream Module for VPS (my preferred method)
 
-##### Proxy Pass
+#### Proxy Pass
 - Likes
 	- Generally straightforward to set-up
 	- Dynamic DNS doesn't get in the way of serving content
@@ -37,7 +37,7 @@ Thankfully, NGINX has ways to go around that to where you can still get that inf
 	- SSL certs are not within LAN
 	- If using non-nginx webserver, sending IP header information requires knowledge of other webservers
 
-##### Stream Module
+#### Stream Module
 - Likes
 	- Only have to install WG on one device, all internal servers face internal traffic only
 	- SSL certs sit on a device behind LAN
@@ -55,7 +55,7 @@ With that being said, I'll begin with how one goes about setting up either syste
 
 ## PROYX PASS
 
-##### How does it work?
+### How does it work?
 Nginx works as a reverse proxy through the use of its `proxy_pass` module, which, in a location block, will tell it where to pull content from. For the sake of this tutorial, I won't go into the options necessary to get this working for individual applications, webpages, etc, I'm simply covering the set-up for distributing content to the web with.
 
 In this set-up, we have NGINX installed on our VPS with listening ports open on 80 and 443. For our internal servers that serve the content, we will need to have Wireguard installed on them all, so that they can all act as peers within the VPN.
@@ -68,22 +68,24 @@ proxy_pass http://X.X.X.3:80;
 
 From here, through our VPN connection, the NGINX reverse proxy on the VPS can capture client information and serve content for us while also communicating with our servers behind LAN.
 
-#### Dependencies
+### Dependencies
 This tutorial assumes that you've already got your webservers up and going with whatever webserver application of your choice (Apache, NGINX, etc). You'll need to install Wireguard on all systems and also NGINX on the VPS if you haven't already. I have the dependencies set to install the full suite of NGINX modules for simplicity's sake but it _is_ best practice to build NGINX only with what you need.
 
 NGINX:
 Debian/Ubuntu: `apt install nginx-full`
+
 RHEL/Fedora: `dnf install nginx-all-modules`
 
 Wireguard:
 Debian/Ubuntu: `apt install wireguard`
+
 RHEL/Fedora: `dnf install wireguard-tools`
 
-#### Wireguard
+### Wireguard
 
 See my Wireguard notes [here.](main/Wireguard.md)
 
-#### NGINX
+### NGINX
 
 Before moving any further, make sure that your web servers are reachable on standard port 80 for HTTP traffic (or whatever port you assigned to it to serve traffic on).
 
@@ -118,30 +120,33 @@ Gateway: X.X.X.1/32
 Peer: X.X.X.2/32
 ```
 
-#### Dependencies
+### Dependencies
 
 NGINX:
 Debian/Ubuntu: `apt install nginx-full`
+
 RHEL/Fedora: `dnf install nginx-all-modules`
 
 Wireguard:
 Debian/Ubuntu: `apt install wireguard`
+
 RHEL/Fedora: `dnf install wireguard-tools`
 
 If you aren't sure that the stream module is installed or you've installed NGINX some other way with other modules, the dependency for that is:
 
 Debian/Ubuntu: `libnginx-mod-stream`
+
 RHEL/Fedora: `nginx-mod-stream`
 
 Stream must be installed BOTH on the VPS and your reverse proxy.
 
-#### Wireguard
+###Wireguard
 
-Set-up instructions [here.](/main/Wireguard.md)
+General set-up instructions [here.](/main/Wireguard.md)
 
-#### NGINX
+### NGINX
 
-##### VPS Configuration
+#### VPS Configuration
 Go to `/etc/nginx/nginx.conf` and define a new block in the config (above or below the `http` block, doesn't matter). Name this block `stream`. In there, you'll want to create another two blocks and define it as `upstream`. This will be our identifier for our reverse proxy within our LAN that'll be connected to through WG. When this is defined, you will create individual `server` blocks for which NGINX on the VPS will listen on.
 ```
 stream {  
@@ -184,7 +189,7 @@ set_real_ip_from <WG.Gateway.IP.From-VPS>
 
 Verify that your firewall rules are set, ensure that NGINX isn't already using ports 80, 443 and give it a restart. Your VPS should now be routing traffic from those ports to ports 4430/4480 on your reverse proxy.
 
-#### Reverse Proxy Configuration
+### Reverse Proxy Configuration
 In your NGINX configuration on the proxy, you will need to add additional listen ports to your servers. Where your server would normally listen on 80/443, you will need to add additional listening ports.
 ```
 listen 4480 proxy_protocol;
