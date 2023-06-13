@@ -143,7 +143,7 @@ RHEL/Fedora: `nginx-mod-stream`
 
 Stream must be installed BOTH on the VPS and your reverse proxy.
 
-###Wireguard
+### Wireguard
 
 General set-up instructions [here.](Wireguard.md)
 
@@ -202,6 +202,9 @@ listen 4430 ssl http2 proxy_protocol;
 These ports are our alternative 80/443 ports from our VPS to route our traffic over the WG tunnel. You can add them next to your standard ports and save your config after the fact. Note that if you use certbot to get SSL certs from, you'll need to go back in and add your SSL proxy pass port on top of 443 for it to connect properly (not an automatic thing).
 
 Check your settings, restart NGINX and you should now be able to access your webpages and services.
+
+### Sources
+
 
 ### TO-DO:
 - NGINX Stream for other traffic
