@@ -85,7 +85,7 @@ iptables -A INPORTS -p icmp -m comment --comment "allow icmp from friendly conne
 # connection defined in the "CONNECTION" table
 # Third rule allows ICMP ping from friendly sources only. This is a bit moot
 # to have and sort of gets in the way of monitoring server uptime but might
-# ease some anxieties about being pinged to high-hell and back by bots on the
+# ease some anxieties about being pinged to heck and back by bots on the
 # web. Set it to "-j ACCEPT" instead.
 
 # This is how you add new incoming rules to your table
