@@ -136,7 +136,6 @@ This concludes set-up on the client.
 
 ##### wg.conf (Server)
 
-CJ: "Aw shit. Here we go again."
 ```
 [Interface]
 #Address of this particular instance, even if it IS a server. You can have the CIDR be more open here (usually /24)
